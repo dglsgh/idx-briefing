@@ -5,7 +5,7 @@ const KSEI_RAW = [{"c":"AADI","n":"ADARO ANDALAN INDONESIA Tbk","h":[["ADARO STR
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 const SK = "idx-b-v11";
-const GIST_URL = "https://gist.githubusercontent.com/dglsgh/a89227769eb88c2b6490515bdab96295/raw/d4df03bc89590e64d8b8ed0acdf1953130187be3/idx_briefing.json";
+const GIST_URL = "https://gist.githubusercontent.com/dglsgh/a89227769eb88c2b6490515bdab96295/raw/idx_briefing.json";
 const todayKey = () => new Date().toISOString().slice(0, 10);
 const fmtShort = d => new Date(d).toLocaleDateString("en-GB", { day: "numeric", month: "short" });
 const fmtFull  = d => new Date(d).toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long", year: "numeric" });
@@ -89,7 +89,175 @@ const SECTS = [
 ];
 function makeSeed(ts) {
   return {
-    date: "2026-03-09", generatedAt: ts,
+    date: "2026-03-13", generatedAt: ts,
+    macroDate: "2026-03-13",
+    headline: "IHSG Slips as Recovery Stalls — BI Meeting & Oil Path in Focus",
+    sentiment: "neutral",
+    sections: {
+      macro: [
+        "IHSG gave back modest gains, down 0.11% to 7,381 as investors booked profits after three-day rebound.",
+        "Brent crude held near $103/bbl; IEA reserve release capping upside but Middle East risk premium lingers.",
+        "IDR steadied at ~16,980/USD ahead of next week's Bank Indonesia policy meeting; no surprises expected.",
+        "US 10Y yield at 4.25% as Fed remains data-dependent; strong China trade data reduced EM outflow fears.",
+        "Gold eased to ~$5,150/oz as risk appetite improved; safe-haven premium trimmed from recent highs.",
+      ],
+      sectors: [
+        "Banking → | BBCA held 6,900 range; market awaiting BI forward guidance before adding positions.",
+        "Energy ↓ | Oil retreat from $110 now weighing on PGAS and MEDC after initial relief rally.",
+        "Consumer → | Ramadan spending supporting ICBP and INDF; subsidy pledge keeps sector floor intact.",
+        "Mining → | ANTM and MDKA range-bound; gold easing from $5,200 peak but holding above $5,100.",
+        "Telco ↑ | TLKM rebounding from weekly lows; stable IDR removes worst-case foreign cost scenario.",
+      ],
+      tickers: [
+        "IHSG: 7,381 ↓0.11% | Profit-taking after three-day rebound; consolidating ahead of BI meeting.",
+        "BBCA: IDR 6,900 → | Holding steady; banking sector awaits BI rate guidance next week.",
+        "BBRI: IDR 3,570 ↑0.56% | State bank outperforming on Ramadan credit demand narrative.",
+        "TLKM: IDR 3,240 ↑0.31% | Telco recovering as IDR stabilises; dividend yield attracting buyers.",
+        "PGAS: IDR 1,775 ↓1.38% | Oil price retreat from peak dampening upstream revenue expectations.",
+      ],
+      discord: [
+        "📊 IHSG -0.11% today — consolidation after 3-day rebound; profit-taking is healthy, not alarming.",
+        "🛢 Brent at $103/bbl — IEA reserve release working; Indonesia's import cost pressure easing fast.",
+        "💵 IDR at 16,980 — stabilising, but all eyes on Bank Indonesia next week for rate guidance.",
+        "🥇 Gold eased to $5,150 — risk-on improving, but geopolitical premium still elevated globally.",
+        "📅 Key next week: Bank Indonesia policy meeting — rate hold near-certain, but guidance on IDR key.",
+      ],
+      trivia: {
+        term: "Profit-Taking",
+        line1: "After a sharp rebound, investors often sell positions to lock in gains — causing indices to dip even on good news.",
+        line2: "Profit-taking is typically healthy: it resets valuations and creates a more sustainable base for the next leg up.",
+      },
+    },
+  };
+}
+
+// ─── Historical briefings (manually pinned) ───────────────────────────────────
+const HISTORY = [
+  {
+    date: "2026-03-12", generatedAt: "2026-03-12T16:30:00+07:00",
+    macroDate: "2026-03-12",
+    headline: "IEA Reserve Release Lifts Sentiment — IHSG Extends Rally to Three-Day High",
+    sentiment: "neutral",
+    sections: {
+      macro: [
+        "IEA announced largest-ever strategic oil reserve release; Brent pulled back to ~$103/bbl from $110 peak.",
+        "China Jan–Feb trade data beat estimates: exports +8.4% YoY, imports +6.1% — commodity demand outlook improved.",
+        "US 10Y yield eased to 4.28% as oil retreat reduced inflation fears; risk appetite returned to EM assets.",
+        "IDR recovered to ~16,980/USD as oil-driven current-account pressure eased; BI holds steady ahead of next week's meeting.",
+        "Bank Indonesia policy meeting scheduled for next week — consensus expects no change after five straight holds.",
+      ],
+      sectors: [
+        "Energy → | Oil retreat trimmed PGAS and MEDC gains; sector paused after two-day rally.",
+        "Banking ↑ | IDR stabilisation and rate-hold expectations boosted BBCA and BBRI; sector led index gains.",
+        "Infrastructure ↑ | Continued buying in toll-road and utility names; JSMR and UNTR among top performers.",
+        "Consumer ↑ | Ramadan restocking demand lifted ICBP and MYOR; subsidy commitment underpins sentiment.",
+        "Property ↑ | Lower-rate expectations and returning foreign buying supported BSDE and CTRA.",
+      ],
+      tickers: [
+        "IHSG: 7,518 ↑0.49% | Third straight gain; recovering from 8-month low hit Monday.",
+        "BBCA: IDR 6,875 ↑0.73% | Stabilising IDR and rate-hold bets drive banking recovery.",
+        "JSMR: IDR 4,420 ↑1.84% | Toll-road operator benefiting from infrastructure re-rating.",
+        "PGAS: IDR 1,800 ↓0.83% | Oil retreat trims upstream gas revenue expectations.",
+        "ICBP: IDR 9,200 ↑1.10% | Ramadan demand and stable fuel subsidy boosting consumer staples.",
+      ],
+      discord: [
+        "🛢 IEA's record oil reserve release knocked Brent back to $103 — Indonesia's import bill relief rally.",
+        "🇨🇳 China trade beat: exports +8.4%, imports +6.1% in Jan–Feb — commodity floor firmer than feared.",
+        "💵 IDR at 16,980/USD, off the worst levels; Bank Indonesia meeting next week the next key catalyst.",
+        "📈 IHSG up three days straight from Monday's 8-month low — but recovery still only half the selloff.",
+        "👀 Watch BI next week: rate hold expected, but forward guidance on IDR defence will move markets.",
+      ],
+      trivia: {
+        term: "Strategic Petroleum Reserve (SPR)",
+        line1: "The IEA coordinates member nations to release oil from strategic reserves to cool prices during supply shocks.",
+        line2: "For Indonesia, a net oil importer, lower crude prices directly reduce the subsidy burden and narrow the trade deficit.",
+      },
+    },
+  },
+  {
+    date: "2026-03-11", generatedAt: "2026-03-11T16:30:00+07:00",
+    macroDate: "2026-03-11",
+    headline: "Bargain Hunters Return — IHSG Adds to Rebound Amid Broad Sector Gains",
+    sentiment: "neutral",
+    sections: {
+      macro: [
+        "US markets extended gains overnight after Trump's 'war could be over soon' remarks cooled geopolitical risk.",
+        "Brent crude retreated to ~$107/bbl from $110+ peak as ceasefire hopes emerged; Indonesia relief rally.",
+        "IDR steadied at ~17,050/USD; BI signalled readiness to intervene but held off on emergency rate action.",
+        "Fed speakers maintained data-dependency tone; next rate decision increasingly influenced by oil trajectory.",
+        "Jakarta confirmed no subsidised fuel price hike during Ramadan; consumer stocks regained ground.",
+      ],
+      sectors: [
+        "Transport ↑ | Fuel subsidy commitment and falling jet fuel expectations boosted GMFI and BIRD.",
+        "Infrastructure ↑ | Bargain hunters targeted beaten-down names; JSMR and WIKA led infrastructure gains.",
+        "Property ↑ | BSDE and CTRA bounced on returning domestic buying; sector was oversold at Monday's lows.",
+        "Banking → | BBCA and BBRI recovered modestly; IDR stability key for sustained sector re-rating.",
+        "Mining → | Gold held above $5,150; ANTM consolidated after Monday's sharp sell-off.",
+      ],
+      tickers: [
+        "IHSG: 7,481 ↑0.54% | Second consecutive gain; transport and infrastructure outperformed.",
+        "SIDO: IDR 670 ↑8.1% | Top gainer; traditional medicine demand spike ahead of Ramadan.",
+        "BSDE: IDR 1,040 ↑3.2% | Property bounce as interest-rate sentiment stabilises.",
+        "BBRI: IDR 3,540 ↑1.0% | State bank recovers; subsidised lending exposure seen as policy hedge.",
+        "ANTM: IDR 2,880 ↑1.6% | Gold consolidating at $5,150 underpins miner recovery.",
+      ],
+      discord: [
+        "✌️ Trump: Middle East war could be 'over soon' — risk-off unwind continues, IDX second day up.",
+        "🛢 Brent eased to $107/bbl — still elevated, but retreat from $110 removes worst-case import fear.",
+        "💵 IDR at 17,050/USD — BI on standby but no emergency hike; Ramadan subsidy pledge helps sentiment.",
+        "🏗️ Infrastructure and property names led today — classic bounce sectors after oversold selloff.",
+        "📊 IHSG recovery is real but cautious — two days up only partially retraces Monday's 8-month low.",
+      ],
+      trivia: {
+        term: "Ramadan Effect",
+        line1: "Consumer spending typically surges 20–30% during Ramadan in Indonesia as households increase food and gift purchases.",
+        line2: "The government maintains fuel subsidies during this period to prevent cost-of-living shocks ahead of Eid celebrations.",
+      },
+    },
+  },
+  {
+    date: "2026-03-10", generatedAt: "2026-03-10T16:30:00+07:00",
+    macroDate: "2026-03-10",
+    headline: "IHSG Surges 1.8% as Trump Peace Remarks Spark Broad-Based Rebound",
+    sentiment: "bullish",
+    sections: {
+      macro: [
+        "Trump's comments that Middle East war could end 'soon' triggered a global risk-on session overnight.",
+        "Brent crude fell to ~$108/bbl from $110+ peak; Hormuz re-opening scenario priced in by energy traders.",
+        "Wall Street recovered strongly; S&P 500 futures up >1.5% drove Asian open higher across the board.",
+        "IDR firmed to ~17,100/USD as safe-haven USD demand eased; BI's intervention threat proved effective.",
+        "Jakarta pledged no fuel price hike during Ramadan, removing a key consumer inflation fear for Q1.",
+      ],
+      sectors: [
+        "Energy ↑ | Oil retreat paradoxically helped IDX energy; relief that import costs ease, PGAS led gains.",
+        "Banking ↑ | IDR recovery and reduced emergency rate-hike risk sparked BBCA and BBRI buying.",
+        "Consumer ↑ | Ramadan subsidy pledge and bargain hunting lifted ICBP, INDF, and MYOR sharply.",
+        "Transport ↑ | Fuel cost relief boosted GMFI; logistics names outperformed after Monday selloff.",
+        "Mining ↑ | Broad risk-on lifted ANTM and MDKA; gold held above $5,150 providing floor.",
+      ],
+      tickers: [
+        "IHSG: 7,471 ↑1.80% | Biggest single-day gain in three weeks; all 10 sectors closed green.",
+        "BBCA: IDR 6,825 ↑2.25% | Banking leads rebound as IDR stabilises around 17,100/USD.",
+        "PGAS: IDR 1,815 ↑1.96% | Oil dip from $110 is net positive for gas distribution outlook.",
+        "INDF: IDR 6,250 ↑2.46% | Consumer giant rebounds; Ramadan demand and stable fuel subsidy priced in.",
+        "ANTM: IDR 2,830 ↑1.97% | Broad market rebound lifts miner; gold above $5,150 maintaining floor.",
+      ],
+      discord: [
+        "📈 IHSG +1.8% today — biggest day in 3 weeks; all 10 IDX sectors closed in the green.",
+        "✌️ Trump says Middle East war could be 'over soon' — risk-on globally, IDX highest beneficiary in Asia.",
+        "🛢 Brent retreating from $110 to $108 is net positive for Indonesia — import bill pressure easing.",
+        "💵 IDR recovering to 17,100; Bank Indonesia standby intervention working without needing rate hike.",
+        "🛒 Jakarta Ramadan fuel subsidy pledge removes key consumer inflation tail-risk — INDF and ICBP rally.",
+      ],
+      trivia: {
+        term: "Risk-On / Risk-Off",
+        line1: "In 'risk-on' sessions, investors shift capital from safe havens (USD, gold, bonds) into equities and EM assets.",
+        line2: "Indonesia benefits strongly from risk-on flows — IDR strengthens and foreign capital returns to IDX.",
+      },
+    },
+  },
+  {
+    date: "2026-03-09", generatedAt: "2026-03-09T07:00:00+07:00",
     macroDate: "2026-03-09",
     headline: "Oil Tops $110 — Indonesia's Import Bill Surges as IDR Hits New Low",
     sentiment: "bearish",
@@ -109,11 +277,11 @@ function makeSeed(ts) {
         "Mining → | Gold above $5,200 supports ANTM and MDKA but broad IDX sentiment offsets commodity gains.",
       ],
       tickers: [
+        "IHSG: ~7,338 ↓1.77% | Hit 8-month low; second consecutive day of sharp losses.",
         "PGAS: IDR 1,850 ↑3.2% | Direct beneficiary of Brent above $110; gas pricing tied to oil benchmarks.",
-        "MEDC: IDR 1,120 ↑2.8% | Upstream oil exposure drives rally; highest close since Q3 2025.",
-        "BBCA: IDR 6,850 ↓2.1% | IDR weakness and rate-hold pressure weigh; largest IDX bank leads losses.",
-        "ANTM: IDR 2,940 ↑1.4% | Gold above $5,200 finally lifting the miner; foreign buying returned.",
-        "IHSG: ~7,430 ↓2.0% | Oil shock dragged index lower; energy gains couldn't offset broad market selloff.",
+        "BBCA: IDR 6,700 ↓1.87% | IDR weakness and rate-hold pressure weigh; largest IDX bank leads losses.",
+        "ANTM: IDR 2,775 ↓2.5% | Broad selloff outweighs gold support; foreign net selling continued.",
+        "ADRO: IDR 2,310 ↓2.1% | Coal name sold off as broader risk aversion dominates energy tailwind.",
       ],
       discord: [
         "🛢 Brent above $110 — Indonesia pays an extra IDR 1+ juta per barrel; subsidy bill balloons fast.",
@@ -128,11 +296,7 @@ function makeSeed(ts) {
         line2: "A wider deficit puts downward pressure on the rupiah and can force Bank Indonesia to raise rates to attract foreign capital.",
       },
     },
-  };
-}
-
-// ─── Historical briefings (manually pinned) ───────────────────────────────────
-const HISTORY = [
+  },
   {
     date: "2026-03-08", generatedAt: "2026-03-08T07:00:00+07:00",
     macroDate: "2026-03-08",
