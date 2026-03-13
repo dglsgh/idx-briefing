@@ -1039,7 +1039,7 @@ function OwnershipPage() {
 }
 
 // ─── App shell ─────────────────────────────────────────────────────────────────
-export default function App() {
+function App() {
   const [page, setPage] = useState("briefing");
   const [dark, setDark] = useState(() => window.matchMedia?.("(prefers-color-scheme: dark)").matches ?? true);
   useEffect(() => {
